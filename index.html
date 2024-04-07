@@ -33,43 +33,61 @@
                 <input type="radio" name="q1" value="Rome">
                 <label for="q1">Rome</label><br>
             </div>
+        </div>
 
-            <!-- Question 2 -->
-            <div class="question">
-                <h2>Question 3</h2>
-                <p>Who wrote the famous novel "To Kill a Mockingbird"?</p>
-                <div class="options">
-                    <input type="radio" name="q3" value="Harper Lee" id="q3-option1">
-                    <label for="q3-option1">Harper Lee</label>
-                    <input type="radio" name="q3" value="J.K. Rowling" id="q3-option2">
-                    <label for="q3-option2">J.K. Rowling</label>
-                    <input type="radio" name="q3" value="Charles Dickens" id="q3-option3">
-                    <label for="q3-option3">Charles Dickens</label>
-                    <button class="submit">Submit</button>
-                </div>
+        <!-- Question 2 -->
+        <div class="question" style="display: none;">
+            <h2>Question 2</h2>
+            <p>Who wrote the famous novel "To Kill a Mockingbird"?</p>
+            <div class="options">
+                <input type="radio" name="q2" value="Harper Lee" id="q2-option1">
+                <label for="q2-option1">Harper Lee</label>
+                <input type="radio" name="q2" value="J.K. Rowling" id="q2-option2">
+                <label for="q2-option2">J.K. Rowling</label>
+                <input type="radio" name="q2" value="Charles Dickens" id="q2-option3">
+                <label for="q2-option3">Charles Dickens</label>
             </div>
-            <!-- Submit button -->
-            <button class="submit">Submit</button>
         </div>
 
-        <div class="score-area">
-
+        <!-- Question 3 -->
+        <div class="question" style="display: none;">
+            <p>What is the capital of Italy?</p>
+            <div class="options">
+                <input type="radio" name="q3" value="Paris">
+                <label for="q3">Paris</label><br>
+                <input type="radio" name="q3" value="Rome">
+                <label for="q3">Rome</label><br>
+                <input type="radio" name="q3" value="Berlin">
+                <label for="q3">Berlin</label><br>
+                <input type="radio" name="q3" value="London">
+                <label for="q3">London</label><br>
+            </div>
         </div>
-        <script src="assets/js/script.js"></script>
-        <script>
-            // Get all the buttons for answer options
-            const answerButtons = document.querySelectorAll('.options input[type="radio"]');
-            // Add event listeners to each answer button
-            answerButtons.forEach(button => {
-                button.addEventListener('change', () => {
-                    const selectedAnswer = button.value; // Get the selected answer value
-                    const question = button.closest('.question');
-                    const submitButton = question.querySelector('.submit');
-                    submitButton.disabled = false;
-                });
-            });
 
-            document.addEventListener('DOMContentLoaded', function() {
+        <div class="question" style="display: none;">
+            <p>Who painted the Mona Lisa?</p>
+            <div class="options">
+                <input type="radio" name="q4" value="Leonardo da Vinci">
+                <label for="q4">Leonardo da Vinci</label><br>
+                <input type="radio" name="q4" value="Vincent van Gogh">
+                <label for="q4">Vincent van Gogh</label><br>
+                <input type="radio" name="q4" value="Pablo Picasso">
+                <label for="q4">Pablo Picasso</label><br>
+                <input type="radio" name="q4" value="Michelangelo">
+                <label for="q4">Michelangelo</label><br>
+            </div>
+        </div>
+
+        <!-- Submit button -->
+        <button class="submit">Submit</button>
+    </div>
+
+    <div class="score-area">
+
+    </div>
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
             const submitButton = document.querySelector('.submit');
             const questions = document.querySelectorAll('.question');
             let currentQuestionIndex = 0;
@@ -83,15 +101,16 @@
                     submitButton.disabled = true; // Disable submit button for the next question
                 } else {
                     // Handle quiz completion (e.g., show score)
-                    alert('Quiz completed!'); 
+                    alert('Quiz completed!'); // Replace this with your desired action
                 }
             }
-        // Add event listener to the submit button
-        submitButton.addEventListener('click', () => {
+
+            // Add event listener to the submit button
+            submitButton.addEventListener('click', () => {
                 showNextQuestion();
             });
         });
-        </script>
+    </script>
 </body>
 
 </html>
