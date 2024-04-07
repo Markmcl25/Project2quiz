@@ -3,22 +3,45 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/81e7ba7bef.js" crossorigin="anonymous"></script>
     <!--Page Title-->
     <title>Online quiz</title>
+    <!--CSS file-->
     <link rel="stylesheet" href="assets/css/styles.css">
+
 </head>
 
 <body>
+    <h1 class="heading">
+        <img class="logo" src="assets/images/question-mark-logo.jpg" alt="logo"> Marks Quiz
+    </h1>
 
-<script src="assets/js/script.js"></script>
-    <!--Section with heading and input box for username-->
-    <div id="quiz-container">
-        <h1>Marks Quiz</h1>
-        <input type="text" id="username" placeholder="Create Username">
-        <div id="question"></div>
-        <div id="options"></div>
-        <button id="submit">Submit</button>
+    <div class="game-area">
+ <!-- Question 1 -->
+ <div class="question">
+    <p>What is the capital of France?</p>
+    <div class="options">
+        <input type="radio" name="q1" value="Paris">
+        <label for="q1">Paris</label><br>
+        <input type="radio" name="q1" value="London">
+        <label for="q1">London</label><br>
+        <input type="radio" name="q1" value="Berlin">
+        <label for="q1">Berlin</label><br>
+        <input type="radio" name="q1" value="Rome">
+        <label for="q1">Rome</label><br>
+    </div>
+</div>
+    </div>
+
+    <div class="score-area">
+
+    </div>
+    <script src="assets/js/script.js"></script>
+    
+
 </body>
 
 </html>
