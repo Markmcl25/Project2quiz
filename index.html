@@ -19,7 +19,13 @@
         <img class="logo" src="assets/images/question-mark-logo.jpg" alt="logo"> Marks Quiz
     </h1>
 
-    <div class="game-area">
+    <div class="username-input">
+        <label for="username">Enter your username:</label>
+        <input type="text" id="username" name="username" placeholder="Username">
+        <button id="startQuiz">Start Quiz</button>
+    </div>
+
+    <div class="game-area" style="display: none;">
         <!-- Question 1 -->
         <div class="question">
             <p>What is the capital of France?</p>
@@ -47,7 +53,7 @@
                 <input type="radio" name="q2" value="Charles Dickens" id="q2-option3">
                 <label for="q2-option3">Charles Dickens</label>
                 <input type="radio" name="q2" value="J R. Tolkin" id="q2-option4">
-                <label for="q2-option1">Harper Lee</label>
+                <label for="q2-option1">J R. Tolkin</label>
             </div>
         </div>
 
@@ -65,6 +71,7 @@
                 <label for="q3">London</label><br>
             </div>
         </div>
+
         <!-- Question 4-->
         <div class="question" style="display: none;">
             <p>Who painted the Mona Lisa?</p>
@@ -122,6 +129,21 @@
                 button.addEventListener('change', () => {
                     enableSubmitButton();
                 });
+            });
+
+            // Username input handling
+            const startButton = document.getElementById('startQuiz');
+            const usernameInput = document.getElementById('username');
+            const gameArea = document.querySelector('.game-area');
+
+            startButton.addEventListener('click', () => {
+                const username = usernameInput.value.trim();
+                if (username) {
+                    document.querySelector('.username-input').style.display = 'none';
+                    gameArea.style.display = 'block';
+                } else {
+                    alert('Please enter a username.');
+                }
             });
         });
     </script>
