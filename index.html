@@ -63,7 +63,7 @@
                 <label for="q3">London</label><br>
             </div>
         </div>
-
+        <!-- Question 4-->
         <div class="question" style="display: none;">
             <p>Who painted the Mona Lisa?</p>
             <div class="options">
@@ -87,11 +87,11 @@
     </div>
     <script src="assets/js/script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const submitButton = document.querySelector('.submit');
             const questions = document.querySelectorAll('.question');
             let currentQuestionIndex = 0;
-    
+
             // Function to show the next question
             function showNextQuestion() {
                 if (currentQuestionIndex < questions.length - 1) {
@@ -103,17 +103,17 @@
                     alert('Quiz completed!'); // Tracker
                 }
             }
-    
+
             // Function to enable submit button when a radio button is selected
             function enableSubmitButton() {
                 submitButton.disabled = false;
             }
-    
+
             // Add event listener to the submit button
             submitButton.addEventListener('click', () => {
                 showNextQuestion();
             });
-    
+
             // Add event listeners to radio buttons to enable submit button when an option is selected
             const answerButtons = document.querySelectorAll('.options input[type="radio"]');
             answerButtons.forEach(button => {
@@ -123,7 +123,7 @@
             });
         });
     </script>
-    
+
 </body>
 
 </html>
