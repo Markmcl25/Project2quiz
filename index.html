@@ -104,12 +104,26 @@
                 }
             }
     
+            // Function to enable submit button when a radio button is selected
+            function enableSubmitButton() {
+                submitButton.disabled = false;
+            }
+    
             // Add event listener to the submit button
             submitButton.addEventListener('click', () => {
                 showNextQuestion();
             });
+    
+            // Add event listeners to radio buttons to enable submit button when an option is selected
+            const answerButtons = document.querySelectorAll('.options input[type="radio"]');
+            answerButtons.forEach(button => {
+                button.addEventListener('change', () => {
+                    enableSubmitButton();
+                });
+            });
         });
     </script>
+    
 </body>
 
 </html>
