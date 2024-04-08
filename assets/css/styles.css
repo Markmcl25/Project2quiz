@@ -24,3 +24,21 @@ body {
     border-radius: 10px;
     padding: 20px;
 }
+
+.correct-img {
+    display: none; /* Initially hidden */
+    margin-top: 10px; 
+    width: 50px; 
+    height: auto; /* Maintain aspect ratio */
+    border: 2px solid green; /* Border color for correct answer */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.wrong-img {
+    display: none; /* Initially hidden */
+    margin-top: 10px; 
+    width: 50px; 
+    height: auto; /* Maintain aspect ratio */
+    border: 2px solid red; /* Border color for wrong answer */
+    border-radius: 5px; /* Rounded corners */
+}
